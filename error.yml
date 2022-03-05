@@ -1,0 +1,11 @@
+---
+- hosts: server2
+  tasks:
+    - name: get files
+      get_url: 
+        url: "http://{{item}}/index.html}}"
+        dest: "/tmp/{[item}}"
+      ignore_errors: true
+      with_items:
+        - 172.25.1.6
+        - 172.25.1.7
